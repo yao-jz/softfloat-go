@@ -4,6 +4,13 @@ import (
 	. "github.com/yao-jz/softfloat-go/include"
 )
 
-func f16_add(a Float16_t, b Float16_t) Float16_t {
-	return a
+func F16_add(a Float16_t, b Float16_t) Float16_t {
+	var uiA, uiB uint16
+	uiA = uint16(a)
+	uiB = uint16(b)
+	if SignF16UI(uiA ^ uiB) {
+		return Softfloat_subMagsF16(uiA, uiB)
+	} else {
+		return Softfloat_addMagsF16(uiA, uiB)
+	}
 }

@@ -4,7 +4,7 @@ import (
 	. "github.com/yao-jz/softfloat-go/include"
 )
 
-func ui32ToF16(a uint32) Float16_t {
+func UI32ToF16(a uint32) Float16_t {
 	var shiftDist int8
 	var ui uint16
 	var sig uint16

@@ -13,8 +13,8 @@ func Softfloat_roundPackToF16(sign bool, exp int16, sig uint16) Float16_t {
 		if exp < 0 {
 			sig = uint16(Softfloat_shiftRightJam32(uint32(sig), uint16(-exp)))
 			exp = 0
-			roundBits = uint16(sig) & 0xF
-		} else if (0x1D < exp) || (0x8000 <= sig+uint16(roundIncrement)) {
+			roundBits = sig & 0xF
+		} else if (0x1D < exp) || (0x8000 <= sig+roundIncrement) {
 			uiZ = PackToF16UI(sign, 0x1F, 0)
 			if roundIncrement == 0 {
 				uiZ -= 1
@@ -23,7 +23,7 @@ func Softfloat_roundPackToF16(sign bool, exp int16, sig uint16) Float16_t {
 		}
 
 	}
-	sig = (sig + uint16(roundIncrement)) >> 4
+	sig = (sig + roundIncrement) >> 4
 	var roundNearEven uint16 = 1 // Assuming roundNearEven is 1
 	temp := uint16(0)
 	if (uint16(roundBits) ^ 8) == 0 {
