@@ -1,0 +1,161 @@
+Date : 2024-03-20 10:32:49
+Directory : /Users/yao/blockchain/softfloat-go
+Total : 131 files,  3638 codes, 355 comments, 488 blanks, all 4481 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| Go             |        128 |      3,630 |        355 |        483 |      4,468 |
+| Markdown       |          2 |          7 |          0 |          4 |         11 |
+| Go Module File |          1 |          1 |          0 |          1 |          2 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                              | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                 |        131 |      3,638 |        355 |        488 |      4,481 |
+| . (Files)                                                         |          4 |         17 |          0 |          9 |         26 |
+| RISCV                                                             |          4 |         22 |          0 |         10 |         32 |
+| comp                                                              |        117 |      3,423 |        340 |        418 |      4,181 |
+| include                                                           |          6 |        176 |         15 |         51 |        242 |
++-------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                          | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/yao/blockchain/softfloat-go/README.md                      | Markdown       |          2 |          0 |          2 |          4 |
+| /Users/yao/blockchain/softfloat-go/RISCV/s_propagateNaNF16UI.go   | Go             |          4 |          0 |          2 |          6 |
+| /Users/yao/blockchain/softfloat-go/RISCV/s_propagateNaNF32UI.go   | Go             |          4 |          0 |          2 |          6 |
+| /Users/yao/blockchain/softfloat-go/RISCV/s_propagateNaNF64UI.go   | Go             |          4 |          0 |          2 |          6 |
+| /Users/yao/blockchain/softfloat-go/RISCV/specialize.go            | Go             |         10 |          0 |          4 |         14 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_add.go                | Go             |         14 |          0 |          3 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_div.go                | Go             |         99 |         18 |          7 |        124 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_eq.go                 | Go             |         13 |          0 |          4 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_eq_signaling.go       | Go             |         13 |          0 |          4 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_isSignalingNaN.go     | Go             |          9 |          0 |          3 |         12 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_le.go                 | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_le_quiet.go           | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_lt.go                 | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_lt_quiet.go           | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_mul.go                | Go             |         74 |         12 |         11 |         97 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_mulAdd.go             | Go             |         11 |          0 |          4 |         15 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_rem.go                | Go             |        100 |          6 |         11 |        117 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_roundToInt.go         | Go             |         41 |          3 |          7 |         51 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_sqrt.go               | Go             |         72 |          5 |          9 |         86 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_sub.go                | Go             |         14 |          0 |          4 |         18 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_f32.go             | Go             |         36 |          3 |          5 |         44 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_f64.go             | Go             |         36 |          3 |          5 |         44 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_i32.go             | Go             |         45 |          0 |          6 |         51 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_i64.go             | Go             |         45 |          1 |          6 |         52 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_ui32.go            | Go             |         40 |          0 |          6 |         46 |
+| /Users/yao/blockchain/softfloat-go/comp/f16_to_ui64.go            | Go             |         44 |          0 |          7 |         51 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_add.go                | Go             |         15 |          0 |          4 |         19 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_div.go                | Go             |         87 |         18 |          9 |        114 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_eq.go                 | Go             |         12 |          0 |          4 |         16 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_eq_signaling.go       | Go             |         13 |          0 |          4 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_isSignalingNaN.go     | Go             |          9 |          0 |          3 |         12 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_le.go                 | Go             |         19 |          0 |          4 |         23 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_le_quiet.go           | Go             |         19 |          0 |          4 |         23 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_lt.go                 | Go             |         19 |          0 |          4 |         23 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_lt_quiet.go           | Go             |         19 |          0 |          4 |         23 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_mul.go                | Go             |         71 |         12 |          7 |         90 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_mulAdd.go             | Go             |         10 |          0 |          3 |         13 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_rem.go                | Go             |         99 |          8 |          8 |        115 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_roundToInt.go         | Go             |         40 |          3 |          6 |         49 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_sqrt.go               | Go             |         62 |          5 |          8 |         75 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_sub.go                | Go             |         13 |          0 |          3 |         16 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_f16.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_f64.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_i32.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_i64.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_ui32.go            | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f32_to_ui64.go            | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_add.go                | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_div.go                | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_eq.go                 | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_eq_signaling.go       | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_isSignalingNaN.go     | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_le.go                 | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_le_quiet.go           | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_lt.go                 | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_lt_quiet.go           | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_mul.go                | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_mulAdd.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_rem.go                | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_roundToInt.go         | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_sqrt.go               | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_sub.go                | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_f16.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_f32.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_i32.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_i64.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_ui32.go            | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/f64_to_ui64.go            | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i32_to_f16.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i32_to_f32.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i32_to_f64.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i64_to_f16.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i64_to_f32.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/i64_to_f64.go             | Go             |          0 |          0 |          1 |          1 |
+| /Users/yao/blockchain/softfloat-go/comp/s_addM.go                 | Go             |         24 |          0 |          4 |         28 |
+| /Users/yao/blockchain/softfloat-go/comp/s_addMagsF16.go           | Go             |        107 |         20 |          5 |        132 |
+| /Users/yao/blockchain/softfloat-go/comp/s_addMagsF32.go           | Go             |         81 |         11 |          5 |         97 |
+| /Users/yao/blockchain/softfloat-go/comp/s_addMagsF64.go           | Go             |         74 |         10 |          5 |         89 |
+| /Users/yao/blockchain/softfloat-go/comp/s_approxRecip32_1.go      | Go             |         16 |          0 |          3 |         19 |
+| /Users/yao/blockchain/softfloat-go/comp/s_approxRecipSqrt32_1.go  | Go             |         24 |          0 |          3 |         27 |
+| /Users/yao/blockchain/softfloat-go/comp/s_approxRecipSqrt_1Ks.go  | Go             |          9 |          0 |          3 |         12 |
+| /Users/yao/blockchain/softfloat-go/comp/s_approxRecip_1Ks.go      | Go             |          9 |          0 |          2 |         11 |
+| /Users/yao/blockchain/softfloat-go/comp/s_mul64To128.go           | Go             |         22 |          0 |          4 |         26 |
+| /Users/yao/blockchain/softfloat-go/comp/s_mul64To128M.go          | Go             |         24 |          0 |          4 |         28 |
+| /Users/yao/blockchain/softfloat-go/comp/s_mulAddF16.go            | Go             |        165 |         43 |          9 |        217 |
+| /Users/yao/blockchain/softfloat-go/comp/s_mulAddF32.go            | Go             |        165 |         43 |          9 |        217 |
+| /Users/yao/blockchain/softfloat-go/comp/s_mulAddF64.go            | Go             |        226 |         38 |          8 |        272 |
+| /Users/yao/blockchain/softfloat-go/comp/s_negXM.go                | Go             |         23 |          0 |          4 |         27 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normRoundPackToF16.go   | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normRoundPackToF32.go   | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normRoundPackToF64.go   | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normSubnormalF16Sig.go  | Go             |         13 |          0 |          3 |         16 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normSubnormalF32Sig.go  | Go             |         13 |          0 |          3 |         16 |
+| /Users/yao/blockchain/softfloat-go/comp/s_normSubnormalF64Sig.go  | Go             |         13 |          0 |          3 |         16 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundMToI64.go          | Go             |         53 |          4 |          4 |         61 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundMToUI64.go         | Go             |         39 |          4 |          4 |         47 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundPackToF16.go       | Go             |         34 |          0 |          5 |         39 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundPackToF32.go       | Go             |         34 |          0 |          5 |         39 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundPackToF64.go       | Go             |         34 |          0 |          5 |         39 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundToI32.go           | Go             |         51 |          0 |          3 |         54 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundToI64.go           | Go             |         48 |          0 |          2 |         50 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundToUI32.go          | Go             |         27 |          2 |          3 |         32 |
+| /Users/yao/blockchain/softfloat-go/comp/s_roundToUI64.go          | Go             |         24 |          3 |          2 |         29 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shiftLeftM.go           | Go             |         34 |          1 |          4 |         39 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shiftRightJam32.go      | Go             |         15 |          0 |          2 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shiftRightJam64.go      | Go             |         15 |          0 |          2 |         17 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shiftRightJamM.go       | Go             |         71 |          4 |          4 |         79 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shiftRightM.go          | Go             |         46 |          0 |          4 |         50 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shortShiftLeftM.go      | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shortShiftRightJam64.go | Go             |          8 |          1 |          2 |         11 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shortShiftRightJamM.go  | Go             |         24 |          0 |          4 |         28 |
+| /Users/yao/blockchain/softfloat-go/comp/s_shortShiftRightM.go     | Go             |         20 |          0 |          4 |         24 |
+| /Users/yao/blockchain/softfloat-go/comp/s_subM.go                 | Go             |         26 |          0 |          4 |         30 |
+| /Users/yao/blockchain/softfloat-go/comp/s_subMagsF16.go           | Go             |        120 |         29 |          4 |        153 |
+| /Users/yao/blockchain/softfloat-go/comp/s_subMagsF32.go           | Go             |         94 |         17 |          4 |        115 |
+| /Users/yao/blockchain/softfloat-go/comp/s_subMagsF64.go           | Go             |         94 |         13 |          5 |        112 |
+| /Users/yao/blockchain/softfloat-go/comp/ui32_to_f16.go            | Go             |         30 |          0 |          4 |         34 |
+| /Users/yao/blockchain/softfloat-go/comp/ui32_to_f32.go            | Go             |         16 |          0 |          4 |         20 |
+| /Users/yao/blockchain/softfloat-go/comp/ui32_to_f64.go            | Go             |         17 |          0 |          4 |         21 |
+| /Users/yao/blockchain/softfloat-go/comp/ui64_to_f16.go            | Go             |         26 |          0 |          4 |         30 |
+| /Users/yao/blockchain/softfloat-go/comp/ui64_to_f32.go            | Go             |         26 |          0 |          4 |         30 |
+| /Users/yao/blockchain/softfloat-go/comp/ui64_to_f64.go            | Go             |         16 |          0 |          3 |         19 |
+| /Users/yao/blockchain/softfloat-go/doc.md                         | Markdown       |          5 |          0 |          2 |          7 |
+| /Users/yao/blockchain/softfloat-go/go.mod                         | Go Module File |          1 |          0 |          1 |          2 |
+| /Users/yao/blockchain/softfloat-go/include/internals.go           | Go             |         93 |          0 |         25 |        118 |
+| /Users/yao/blockchain/softfloat-go/include/opts.go                | Go             |         20 |          1 |          5 |         26 |
+| /Users/yao/blockchain/softfloat-go/include/primitive_types.go     | Go             |         29 |          0 |         11 |         40 |
+| /Users/yao/blockchain/softfloat-go/include/softfloat.go           | Go             |         19 |          4 |          5 |         28 |
+| /Users/yao/blockchain/softfloat-go/include/softfloat_types.go     | Go             |          5 |         10 |          2 |         17 |
+| /Users/yao/blockchain/softfloat-go/include/utils.go               | Go             |         10 |          0 |          3 |         13 |
+| /Users/yao/blockchain/softfloat-go/main.go                        | Go             |          9 |          0 |          4 |         13 |
+| Total                                                             |                |      3,638 |        355 |        488 |      4,481 |
++-------------------------------------------------------------------+----------------+------------+------------+------------+------------+

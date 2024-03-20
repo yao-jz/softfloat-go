@@ -1,0 +1,146 @@
+# Details
+
+Date : 2024-03-20 10:32:49
+
+Directory /Users/yao/blockchain/softfloat-go
+
+Total : 131 files,  3638 codes, 355 comments, 488 blanks, all 4481 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [README.md](/README.md) | Markdown | 2 | 0 | 2 | 4 |
+| [RISCV/s_propagateNaNF16UI.go](/RISCV/s_propagateNaNF16UI.go) | Go | 4 | 0 | 2 | 6 |
+| [RISCV/s_propagateNaNF32UI.go](/RISCV/s_propagateNaNF32UI.go) | Go | 4 | 0 | 2 | 6 |
+| [RISCV/s_propagateNaNF64UI.go](/RISCV/s_propagateNaNF64UI.go) | Go | 4 | 0 | 2 | 6 |
+| [RISCV/specialize.go](/RISCV/specialize.go) | Go | 10 | 0 | 4 | 14 |
+| [comp/f16_add.go](/comp/f16_add.go) | Go | 14 | 0 | 3 | 17 |
+| [comp/f16_div.go](/comp/f16_div.go) | Go | 99 | 18 | 7 | 124 |
+| [comp/f16_eq.go](/comp/f16_eq.go) | Go | 13 | 0 | 4 | 17 |
+| [comp/f16_eq_signaling.go](/comp/f16_eq_signaling.go) | Go | 13 | 0 | 4 | 17 |
+| [comp/f16_isSignalingNaN.go](/comp/f16_isSignalingNaN.go) | Go | 9 | 0 | 3 | 12 |
+| [comp/f16_le.go](/comp/f16_le.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/f16_le_quiet.go](/comp/f16_le_quiet.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/f16_lt.go](/comp/f16_lt.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/f16_lt_quiet.go](/comp/f16_lt_quiet.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/f16_mul.go](/comp/f16_mul.go) | Go | 74 | 12 | 11 | 97 |
+| [comp/f16_mulAdd.go](/comp/f16_mulAdd.go) | Go | 11 | 0 | 4 | 15 |
+| [comp/f16_rem.go](/comp/f16_rem.go) | Go | 100 | 6 | 11 | 117 |
+| [comp/f16_roundToInt.go](/comp/f16_roundToInt.go) | Go | 41 | 3 | 7 | 51 |
+| [comp/f16_sqrt.go](/comp/f16_sqrt.go) | Go | 72 | 5 | 9 | 86 |
+| [comp/f16_sub.go](/comp/f16_sub.go) | Go | 14 | 0 | 4 | 18 |
+| [comp/f16_to_f32.go](/comp/f16_to_f32.go) | Go | 36 | 3 | 5 | 44 |
+| [comp/f16_to_f64.go](/comp/f16_to_f64.go) | Go | 36 | 3 | 5 | 44 |
+| [comp/f16_to_i32.go](/comp/f16_to_i32.go) | Go | 45 | 0 | 6 | 51 |
+| [comp/f16_to_i64.go](/comp/f16_to_i64.go) | Go | 45 | 1 | 6 | 52 |
+| [comp/f16_to_ui32.go](/comp/f16_to_ui32.go) | Go | 40 | 0 | 6 | 46 |
+| [comp/f16_to_ui64.go](/comp/f16_to_ui64.go) | Go | 44 | 0 | 7 | 51 |
+| [comp/f32_add.go](/comp/f32_add.go) | Go | 15 | 0 | 4 | 19 |
+| [comp/f32_div.go](/comp/f32_div.go) | Go | 87 | 18 | 9 | 114 |
+| [comp/f32_eq.go](/comp/f32_eq.go) | Go | 12 | 0 | 4 | 16 |
+| [comp/f32_eq_signaling.go](/comp/f32_eq_signaling.go) | Go | 13 | 0 | 4 | 17 |
+| [comp/f32_isSignalingNaN.go](/comp/f32_isSignalingNaN.go) | Go | 9 | 0 | 3 | 12 |
+| [comp/f32_le.go](/comp/f32_le.go) | Go | 19 | 0 | 4 | 23 |
+| [comp/f32_le_quiet.go](/comp/f32_le_quiet.go) | Go | 19 | 0 | 4 | 23 |
+| [comp/f32_lt.go](/comp/f32_lt.go) | Go | 19 | 0 | 4 | 23 |
+| [comp/f32_lt_quiet.go](/comp/f32_lt_quiet.go) | Go | 19 | 0 | 4 | 23 |
+| [comp/f32_mul.go](/comp/f32_mul.go) | Go | 71 | 12 | 7 | 90 |
+| [comp/f32_mulAdd.go](/comp/f32_mulAdd.go) | Go | 10 | 0 | 3 | 13 |
+| [comp/f32_rem.go](/comp/f32_rem.go) | Go | 99 | 8 | 8 | 115 |
+| [comp/f32_roundToInt.go](/comp/f32_roundToInt.go) | Go | 40 | 3 | 6 | 49 |
+| [comp/f32_sqrt.go](/comp/f32_sqrt.go) | Go | 62 | 5 | 8 | 75 |
+| [comp/f32_sub.go](/comp/f32_sub.go) | Go | 13 | 0 | 3 | 16 |
+| [comp/f32_to_f16.go](/comp/f32_to_f16.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f32_to_f64.go](/comp/f32_to_f64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f32_to_i32.go](/comp/f32_to_i32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f32_to_i64.go](/comp/f32_to_i64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f32_to_ui32.go](/comp/f32_to_ui32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f32_to_ui64.go](/comp/f32_to_ui64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_add.go](/comp/f64_add.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_div.go](/comp/f64_div.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_eq.go](/comp/f64_eq.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_eq_signaling.go](/comp/f64_eq_signaling.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_isSignalingNaN.go](/comp/f64_isSignalingNaN.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_le.go](/comp/f64_le.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_le_quiet.go](/comp/f64_le_quiet.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_lt.go](/comp/f64_lt.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_lt_quiet.go](/comp/f64_lt_quiet.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_mul.go](/comp/f64_mul.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_mulAdd.go](/comp/f64_mulAdd.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_rem.go](/comp/f64_rem.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_roundToInt.go](/comp/f64_roundToInt.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_sqrt.go](/comp/f64_sqrt.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_sub.go](/comp/f64_sub.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_f16.go](/comp/f64_to_f16.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_f32.go](/comp/f64_to_f32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_i32.go](/comp/f64_to_i32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_i64.go](/comp/f64_to_i64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_ui32.go](/comp/f64_to_ui32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/f64_to_ui64.go](/comp/f64_to_ui64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i32_to_f16.go](/comp/i32_to_f16.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i32_to_f32.go](/comp/i32_to_f32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i32_to_f64.go](/comp/i32_to_f64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i64_to_f16.go](/comp/i64_to_f16.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i64_to_f32.go](/comp/i64_to_f32.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/i64_to_f64.go](/comp/i64_to_f64.go) | Go | 0 | 0 | 1 | 1 |
+| [comp/s_addM.go](/comp/s_addM.go) | Go | 24 | 0 | 4 | 28 |
+| [comp/s_addMagsF16.go](/comp/s_addMagsF16.go) | Go | 107 | 20 | 5 | 132 |
+| [comp/s_addMagsF32.go](/comp/s_addMagsF32.go) | Go | 81 | 11 | 5 | 97 |
+| [comp/s_addMagsF64.go](/comp/s_addMagsF64.go) | Go | 74 | 10 | 5 | 89 |
+| [comp/s_approxRecip32_1.go](/comp/s_approxRecip32_1.go) | Go | 16 | 0 | 3 | 19 |
+| [comp/s_approxRecipSqrt32_1.go](/comp/s_approxRecipSqrt32_1.go) | Go | 24 | 0 | 3 | 27 |
+| [comp/s_approxRecipSqrt_1Ks.go](/comp/s_approxRecipSqrt_1Ks.go) | Go | 9 | 0 | 3 | 12 |
+| [comp/s_approxRecip_1Ks.go](/comp/s_approxRecip_1Ks.go) | Go | 9 | 0 | 2 | 11 |
+| [comp/s_mul64To128.go](/comp/s_mul64To128.go) | Go | 22 | 0 | 4 | 26 |
+| [comp/s_mul64To128M.go](/comp/s_mul64To128M.go) | Go | 24 | 0 | 4 | 28 |
+| [comp/s_mulAddF16.go](/comp/s_mulAddF16.go) | Go | 165 | 43 | 9 | 217 |
+| [comp/s_mulAddF32.go](/comp/s_mulAddF32.go) | Go | 165 | 43 | 9 | 217 |
+| [comp/s_mulAddF64.go](/comp/s_mulAddF64.go) | Go | 226 | 38 | 8 | 272 |
+| [comp/s_negXM.go](/comp/s_negXM.go) | Go | 23 | 0 | 4 | 27 |
+| [comp/s_normRoundPackToF16.go](/comp/s_normRoundPackToF16.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/s_normRoundPackToF32.go](/comp/s_normRoundPackToF32.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/s_normRoundPackToF64.go](/comp/s_normRoundPackToF64.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/s_normSubnormalF16Sig.go](/comp/s_normSubnormalF16Sig.go) | Go | 13 | 0 | 3 | 16 |
+| [comp/s_normSubnormalF32Sig.go](/comp/s_normSubnormalF32Sig.go) | Go | 13 | 0 | 3 | 16 |
+| [comp/s_normSubnormalF64Sig.go](/comp/s_normSubnormalF64Sig.go) | Go | 13 | 0 | 3 | 16 |
+| [comp/s_roundMToI64.go](/comp/s_roundMToI64.go) | Go | 53 | 4 | 4 | 61 |
+| [comp/s_roundMToUI64.go](/comp/s_roundMToUI64.go) | Go | 39 | 4 | 4 | 47 |
+| [comp/s_roundPackToF16.go](/comp/s_roundPackToF16.go) | Go | 34 | 0 | 5 | 39 |
+| [comp/s_roundPackToF32.go](/comp/s_roundPackToF32.go) | Go | 34 | 0 | 5 | 39 |
+| [comp/s_roundPackToF64.go](/comp/s_roundPackToF64.go) | Go | 34 | 0 | 5 | 39 |
+| [comp/s_roundToI32.go](/comp/s_roundToI32.go) | Go | 51 | 0 | 3 | 54 |
+| [comp/s_roundToI64.go](/comp/s_roundToI64.go) | Go | 48 | 0 | 2 | 50 |
+| [comp/s_roundToUI32.go](/comp/s_roundToUI32.go) | Go | 27 | 2 | 3 | 32 |
+| [comp/s_roundToUI64.go](/comp/s_roundToUI64.go) | Go | 24 | 3 | 2 | 29 |
+| [comp/s_shiftLeftM.go](/comp/s_shiftLeftM.go) | Go | 34 | 1 | 4 | 39 |
+| [comp/s_shiftRightJam32.go](/comp/s_shiftRightJam32.go) | Go | 15 | 0 | 2 | 17 |
+| [comp/s_shiftRightJam64.go](/comp/s_shiftRightJam64.go) | Go | 15 | 0 | 2 | 17 |
+| [comp/s_shiftRightJamM.go](/comp/s_shiftRightJamM.go) | Go | 71 | 4 | 4 | 79 |
+| [comp/s_shiftRightM.go](/comp/s_shiftRightM.go) | Go | 46 | 0 | 4 | 50 |
+| [comp/s_shortShiftLeftM.go](/comp/s_shortShiftLeftM.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/s_shortShiftRightJam64.go](/comp/s_shortShiftRightJam64.go) | Go | 8 | 1 | 2 | 11 |
+| [comp/s_shortShiftRightJamM.go](/comp/s_shortShiftRightJamM.go) | Go | 24 | 0 | 4 | 28 |
+| [comp/s_shortShiftRightM.go](/comp/s_shortShiftRightM.go) | Go | 20 | 0 | 4 | 24 |
+| [comp/s_subM.go](/comp/s_subM.go) | Go | 26 | 0 | 4 | 30 |
+| [comp/s_subMagsF16.go](/comp/s_subMagsF16.go) | Go | 120 | 29 | 4 | 153 |
+| [comp/s_subMagsF32.go](/comp/s_subMagsF32.go) | Go | 94 | 17 | 4 | 115 |
+| [comp/s_subMagsF64.go](/comp/s_subMagsF64.go) | Go | 94 | 13 | 5 | 112 |
+| [comp/ui32_to_f16.go](/comp/ui32_to_f16.go) | Go | 30 | 0 | 4 | 34 |
+| [comp/ui32_to_f32.go](/comp/ui32_to_f32.go) | Go | 16 | 0 | 4 | 20 |
+| [comp/ui32_to_f64.go](/comp/ui32_to_f64.go) | Go | 17 | 0 | 4 | 21 |
+| [comp/ui64_to_f16.go](/comp/ui64_to_f16.go) | Go | 26 | 0 | 4 | 30 |
+| [comp/ui64_to_f32.go](/comp/ui64_to_f32.go) | Go | 26 | 0 | 4 | 30 |
+| [comp/ui64_to_f64.go](/comp/ui64_to_f64.go) | Go | 16 | 0 | 3 | 19 |
+| [doc.md](/doc.md) | Markdown | 5 | 0 | 2 | 7 |
+| [go.mod](/go.mod) | Go Module File | 1 | 0 | 1 | 2 |
+| [include/internals.go](/include/internals.go) | Go | 93 | 0 | 25 | 118 |
+| [include/opts.go](/include/opts.go) | Go | 20 | 1 | 5 | 26 |
+| [include/primitive_types.go](/include/primitive_types.go) | Go | 29 | 0 | 11 | 40 |
+| [include/softfloat.go](/include/softfloat.go) | Go | 19 | 4 | 5 | 28 |
+| [include/softfloat_types.go](/include/softfloat_types.go) | Go | 5 | 10 | 2 | 17 |
+| [include/utils.go](/include/utils.go) | Go | 10 | 0 | 3 | 13 |
+| [main.go](/main.go) | Go | 9 | 0 | 4 | 13 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
