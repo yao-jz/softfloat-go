@@ -2,7 +2,6 @@ package comp
 
 import (
 	. "github.com/yao-jz/softfloat-go/include"
-	. "github.com/yao-jz/softfloat-go/riscv"
 )
 
 func F64_mulAdd(a, b, c Float64_t) Float64_t {
