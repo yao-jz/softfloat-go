@@ -1,0 +1,140 @@
+.
+├── LICENSE
+├── README.md
+├── RISCV
+│   ├── s_propagateNaNF16UI.go
+│   ├── s_propagateNaNF32UI.go
+│   ├── s_propagateNaNF64UI.go
+│   └── specialize.go
+├── comp
+│   ├── f16_add.go
+│   ├── f16_div.go
+│   ├── f16_eq.go
+│   ├── f16_eq_signaling.go
+│   ├── f16_isSignalingNaN.go
+│   ├── f16_le.go
+│   ├── f16_le_quiet.go
+│   ├── f16_lt.go
+│   ├── f16_lt_quiet.go
+│   ├── f16_mul.go
+│   ├── f16_mulAdd.go
+│   ├── f16_rem.go
+│   ├── f16_roundToInt.go
+│   ├── f16_sqrt.go
+│   ├── f16_sub.go
+│   ├── f16_to_f32.go
+│   ├── f16_to_f64.go
+│   ├── f16_to_i32.go
+│   ├── f16_to_i64.go
+│   ├── f16_to_ui32.go
+│   ├── f16_to_ui64.go
+│   ├── f32_add.go
+│   ├── f32_div.go
+│   ├── f32_eq.go
+│   ├── f32_eq_signaling.go
+│   ├── f32_isSignalingNaN.go
+│   ├── f32_le.go
+│   ├── f32_le_quiet.go
+│   ├── f32_lt.go
+│   ├── f32_lt_quiet.go
+│   ├── f32_mul.go
+│   ├── f32_mulAdd.go
+│   ├── f32_rem.go
+│   ├── f32_roundToInt.go
+│   ├── f32_sqrt.go
+│   ├── f32_sub.go
+│   ├── f32_to_f16.go
+│   ├── f32_to_f64.go
+│   ├── f32_to_i32.go
+│   ├── f32_to_i64.go
+│   ├── f32_to_ui32.go
+│   ├── f32_to_ui64.go
+│   ├── f64_add.go
+│   ├── f64_div.go
+│   ├── f64_eq.go
+│   ├── f64_eq_signaling.go
+│   ├── f64_isSignalingNaN.go
+│   ├── f64_le.go
+│   ├── f64_le_quiet.go
+│   ├── f64_lt.go
+│   ├── f64_lt_quiet.go
+│   ├── f64_mul.go
+│   ├── f64_mulAdd.go
+│   ├── f64_rem.go
+│   ├── f64_roundToInt.go
+│   ├── f64_sqrt.go
+│   ├── f64_sub.go
+│   ├── f64_to_f16.go
+│   ├── f64_to_f32.go
+│   ├── f64_to_i32.go
+│   ├── f64_to_i64.go
+│   ├── f64_to_ui32.go
+│   ├── f64_to_ui64.go
+│   ├── i32_to_f16.go
+│   ├── i32_to_f32.go
+│   ├── i32_to_f64.go
+│   ├── i64_to_f16.go
+│   ├── i64_to_f32.go
+│   ├── i64_to_f64.go
+│   ├── s_addM.go
+│   ├── s_addMagsF16.go
+│   ├── s_addMagsF32.go
+│   ├── s_addMagsF64.go
+│   ├── s_approxRecip32_1.go
+│   ├── s_approxRecipSqrt32_1.go
+│   ├── s_approxRecipSqrt_1Ks.go
+│   ├── s_approxRecip_1Ks.go
+│   ├── s_mul64To128.go
+│   ├── s_mul64To128M.go
+│   ├── s_mulAddF16.go
+│   ├── s_mulAddF32.go
+│   ├── s_mulAddF64.go
+│   ├── s_negXM.go
+│   ├── s_normRoundPackToF16.go
+│   ├── s_normRoundPackToF32.go
+│   ├── s_normRoundPackToF64.go
+│   ├── s_normSubnormalF16Sig.go
+│   ├── s_normSubnormalF32Sig.go
+│   ├── s_normSubnormalF64Sig.go
+│   ├── s_roundMToI64.go
+│   ├── s_roundMToUI64.go
+│   ├── s_roundPackToF16.go
+│   ├── s_roundPackToF32.go
+│   ├── s_roundPackToF64.go
+│   ├── s_roundToI32.go
+│   ├── s_roundToI64.go
+│   ├── s_roundToUI32.go
+│   ├── s_roundToUI64.go
+│   ├── s_shiftLeftM.go
+│   ├── s_shiftRightJam32.go
+│   ├── s_shiftRightJam64.go
+│   ├── s_shiftRightJamM.go
+│   ├── s_shiftRightM.go
+│   ├── s_shortShiftLeftM.go
+│   ├── s_shortShiftRightJam64.go
+│   ├── s_shortShiftRightJamM.go
+│   ├── s_shortShiftRightM.go
+│   ├── s_subM.go
+│   ├── s_subMagsF16.go
+│   ├── s_subMagsF32.go
+│   ├── s_subMagsF64.go
+│   ├── ui32_to_f16.go
+│   ├── ui32_to_f32.go
+│   ├── ui32_to_f64.go
+│   ├── ui64_to_f16.go
+│   ├── ui64_to_f32.go
+│   └── ui64_to_f64.go
+├── doc.md
+├── go.mod
+├── include
+│   ├── internals.go
+│   ├── opts.go
+│   ├── primitive_types.go
+│   ├── softfloat.go
+│   ├── softfloat_types.go
+│   └── utils.go
+├── main.go
+├── softfloat-go
+└── tree.txt
+
+4 directories, 134 files

@@ -5,7 +5,7 @@ import (
 	. "github.com/yao-jz/softfloat-go/riscv"
 )
 
-func f64_sqrt(a Float64_t) Float64_t {
+func F64_sqrt(a Float64_t) Float64_t {
 	var uiA, sigA, uiZ, rem, sigZ, shiftedSigZ uint64
 	var signA bool
 	var expA, expZ int16

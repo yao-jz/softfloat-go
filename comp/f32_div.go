@@ -11,6 +11,7 @@ func F32_div(a Float32_t, b Float32_t) Float32_t {
 	var expA, expB, expZ int16
 	var sigA, sigB, sigZ uint32
 	var uiZ uint32
+	var rem uint64
 
 	uiA = uint32(a)
 	signA = SignF32UI(uiA)
@@ -100,7 +101,7 @@ func F32_div(a Float32_t, b Float32_t) Float32_t {
 	sigZ += 2
 	if (sigZ & 0x3F) < 2 {
 		sigZ &= ^uint32(3)
-		rem := (uint64(sigA) << 32) - uint64(sigZ<<1)*uint64(sigB)
+		rem = (uint64(sigA) << 32) - uint64(sigZ<<1)*uint64(sigB)
 		if rem&0x8000000000000000 != 0 {
 			sigZ -= 4
 		} else {

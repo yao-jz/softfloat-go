@@ -4,7 +4,7 @@ import (
 	. "github.com/yao-jz/softfloat-go/include"
 )
 
-func Softfloat_mul64To128M(a uint64, b uint64, zPtr [4]uint32) {
+func Softfloat_mul64To128M(a uint64, b uint64, zPtr []uint32) {
 	var a32, a0, b32, b0 uint32
 	var z0, mid1, z64, mid uint64
 

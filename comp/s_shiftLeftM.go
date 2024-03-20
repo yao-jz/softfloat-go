@@ -30,7 +30,7 @@ func Softfloat_shiftLeftM(size_words uint8, aPtr []uint32, dist uint32, zPtr []u
 	zPtr[0] = 0
 	zPtr = zPtr[1:]
 	wordDist--
-	for wordDist > 0 {
+	for wordDist != 0 {
 		zPtr[0] = 0
 		zPtr = zPtr[1:]
 		wordDist--

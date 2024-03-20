@@ -137,7 +137,8 @@ func Softfloat_mulAddF64(uiA uint64, uiB uint64, uiC uint64, op uint8) Float64_t
 	expZ = expA + expB - 0x3FE
 	sigA = (sigA | uint64(0x0010000000000000)) << 10
 	sigB = (sigB | uint64(0x0010000000000000)) << 11
-	Softfloat_mul64To128M(sigA, sigB, sig128Z)
+	// fmt.Println("here")
+	Softfloat_mul64To128M(sigA, sigB, sig128Z[:])
 	sigZ = uint64(sig128Z[IndexWord(4, 3)])<<32 | uint64(sig128Z[IndexWord(4, 2)])
 	shiftDist = 0
 	if (sigZ & uint64(0x4000000000000000)) == 0 {

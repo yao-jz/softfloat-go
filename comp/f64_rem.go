@@ -22,6 +22,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 	sigB = FracF64UI(uiB)
 
 	if expA == 0x7FF {
+		// fmt.Println("expA == 0x7FF")
 		if sigA != 0 || (expB == 0x7FF && sigB != 0) {
 			// propagateNaN
 			uiZ = Softfloat_propagateNaNF64UI(uiA, uiB)
@@ -34,6 +35,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 		return Float64_t(uiZ)
 	}
 	if expB == 0x7FF {
+		// fmt.Println("expB == 0x7FF")
 		if sigB != 0 {
 			// propagateNaN
 			uiZ = Softfloat_propagateNaNF64UI(uiA, uiB)
@@ -44,10 +46,12 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 	}
 
 	if expA < expB-1 {
+		// fmt.Println("expA < expB-1 ", a)
 		return a
 	}
 
 	if expB == 0 {
+		// fmt.Println("expB == 0")
 		if sigB == 0 {
 			// invalid
 			uiZ = 0x7FF8000000000000
@@ -57,6 +61,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 		expB, sigB = Softfloat_normSubnormalF64Sig(sigB)
 	}
 	if expA == 0 {
+		// fmt.Println("expA == 0")
 		if sigA == 0 {
 			return a
 		}
@@ -67,6 +72,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 	sigB |= 0x0010000000000000
 	expDiff = expA - expB
 	if expDiff < 1 {
+		// fmt.Println("expDiff < 1")
 		if expDiff < -1 {
 			return a
 		}
@@ -83,6 +89,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 			}
 		}
 	} else {
+		// fmt.Println("expDiff >= 1")
 		recip32 = Softfloat_approxRecip32_1(uint32(sigB >> 21))
 		rem <<= 9
 		expDiff -= 30
@@ -103,6 +110,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 		q = uint32(q64>>32) >> uint32((^expDiff)&31)
 		rem = (rem << (expDiff + 30)) - uint64(q)*sigB
 		if rem&0x8000000000000000 != 0 {
+			// fmt.Println("rem&0x8000000000000000 != 0")
 			altRem = rem + sigB
 			// selectRem
 			meanRem = rem + altRem
@@ -117,7 +125,7 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 			return Softfloat_normRoundPackToF64(signRem, expB, rem)
 		}
 	}
-
+	// fmt.Println("here")
 	for {
 		altRem = rem
 		q++
@@ -129,10 +137,12 @@ func F64_rem(a Float64_t, b Float64_t) Float64_t {
 
 	meanRem = rem + altRem
 	if (meanRem&0x8000000000000000) != 0 || (meanRem == 0 && (q&1) != 0) {
+		// fmt.Println("meanRem&0x8000000000000000 != 0 || (meanRem == 0 && (q&1) != 0)")
 		rem = altRem
 	}
 	signRem = signA
 	if rem&0x8000000000000000 != 0 {
+		// fmt.Println("rem&0x8000000000000000 != 0")
 		signRem = !signRem
 		rem = -rem
 	}

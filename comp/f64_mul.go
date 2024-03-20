@@ -5,7 +5,7 @@ import (
 	. "github.com/yao-jz/softfloat-go/riscv"
 )
 
-func f64_mul(a Float64_t, b Float64_t) Float64_t {
+func F64_mul(a Float64_t, b Float64_t) Float64_t {
 	var uiA, uiB, uiZ uint64
 	var signA, signB, signZ bool
 	var expA, expB, expZ int16
@@ -80,7 +80,8 @@ func f64_mul(a Float64_t, b Float64_t) Float64_t {
 	expZ = expA + expB - 0x3FF
 	sigA = (sigA | 0x0010000000000000) << 10
 	sigB = (sigB | 0x0010000000000000) << 11
-	Softfloat_mul64To128M(sigA, sigB, sig128Z)
+	// fmt.Println("here")
+	Softfloat_mul64To128M(sigA, sigB, sig128Z[:])
 	sigZ = uint64(sig128Z[IndexWord(4, 3)])<<32 | uint64(sig128Z[IndexWord(4, 2)])
 	if sig128Z[IndexWord(4, 1)] != 0 || sig128Z[IndexWord(4, 0)] != 0 {
 		sigZ |= 1
