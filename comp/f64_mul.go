@@ -33,6 +33,8 @@ func F64_mul(a Float64_t, b Float64_t) Float64_t {
 		magBits = uint64(expB) | sigB
 		// infArg
 		if magBits == 0 {
+			// invalid: zero times infinity
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			uiZ = 0x7FF8000000000000
 		} else {
 			uiZ = PackToF64UI(signZ, 0x7FF, 0)
@@ -50,6 +52,8 @@ func F64_mul(a Float64_t, b Float64_t) Float64_t {
 		magBits = uint64(expA) | sigA
 		// infArg
 		if magBits == 0 {
+			// invalid: zero times infinity
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			uiZ = 0x7FF8000000000000
 		} else {
 			uiZ = PackToF64UI(signZ, 0x7FF, 0)

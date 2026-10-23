@@ -23,7 +23,10 @@ func F64_to_i64(a Float64_t, exact bool) int64 {
 	extSig[IndexWord(3, 0)] = 0
 	if shiftDist <= 0 {
 		if shiftDist < -11 {
-			// invalid
+			// invalid: too large to represent at all. The saturated value alone is not
+			// enough - RISC-V distinguishes a genuine INT64_MAX from a clamped one by the
+			// flag, and rv64ud-p-fcvt_w test_20 checks exactly that.
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			if exp == 0x7FF && FracF64UI(uiA) != 0 {
 				return 0x7FFFFFFFFFFFFFFF
 			} else {

@@ -1,21 +1,14 @@
 .
-├── LICENSE
-├── README.md
-├── RISCV
-│   ├── s_propagateNaNF16UI.go
-│   ├── s_propagateNaNF32UI.go
-│   ├── s_propagateNaNF64UI.go
-│   └── specialize.go
 ├── comp
 │   ├── f16_add.go
 │   ├── f16_div.go
-│   ├── f16_eq.go
 │   ├── f16_eq_signaling.go
+│   ├── f16_eq.go
 │   ├── f16_isSignalingNaN.go
-│   ├── f16_le.go
 │   ├── f16_le_quiet.go
-│   ├── f16_lt.go
+│   ├── f16_le.go
 │   ├── f16_lt_quiet.go
+│   ├── f16_lt.go
 │   ├── f16_mul.go
 │   ├── f16_mulAdd.go
 │   ├── f16_rem.go
@@ -29,14 +22,16 @@
 │   ├── f16_to_ui32.go
 │   ├── f16_to_ui64.go
 │   ├── f32_add.go
+│   ├── f32_classS.go
 │   ├── f32_div.go
-│   ├── f32_eq.go
 │   ├── f32_eq_signaling.go
+│   ├── f32_eq.go
 │   ├── f32_isSignalingNaN.go
-│   ├── f32_le.go
 │   ├── f32_le_quiet.go
-│   ├── f32_lt.go
+│   ├── f32_le.go
 │   ├── f32_lt_quiet.go
+│   ├── f32_lt.go
+│   ├── f32_minmax.go
 │   ├── f32_mul.go
 │   ├── f32_mulAdd.go
 │   ├── f32_rem.go
@@ -50,14 +45,16 @@
 │   ├── f32_to_ui32.go
 │   ├── f32_to_ui64.go
 │   ├── f64_add.go
+│   ├── f64_classS.go
 │   ├── f64_div.go
-│   ├── f64_eq.go
 │   ├── f64_eq_signaling.go
+│   ├── f64_eq.go
 │   ├── f64_isSignalingNaN.go
-│   ├── f64_le.go
 │   ├── f64_le_quiet.go
-│   ├── f64_lt.go
+│   ├── f64_le.go
 │   ├── f64_lt_quiet.go
+│   ├── f64_lt.go
+│   ├── f64_minmax.go
 │   ├── f64_mul.go
 │   ├── f64_mulAdd.go
 │   ├── f64_rem.go
@@ -70,20 +67,24 @@
 │   ├── f64_to_i64.go
 │   ├── f64_to_ui32.go
 │   ├── f64_to_ui64.go
+│   ├── flags_test.go
 │   ├── i32_to_f16.go
 │   ├── i32_to_f32.go
 │   ├── i32_to_f64.go
 │   ├── i64_to_f16.go
 │   ├── i64_to_f32.go
 │   ├── i64_to_f64.go
+│   ├── oracle_test.go
+│   ├── riscv_test.go
+│   ├── rounding_test.go
 │   ├── s_addM.go
 │   ├── s_addMagsF16.go
 │   ├── s_addMagsF32.go
 │   ├── s_addMagsF64.go
-│   ├── s_approxRecip32_1.go
-│   ├── s_approxRecipSqrt32_1.go
-│   ├── s_approxRecipSqrt_1Ks.go
 │   ├── s_approxRecip_1Ks.go
+│   ├── s_approxRecip32_1.go
+│   ├── s_approxRecipSqrt_1Ks.go
+│   ├── s_approxRecipSqrt32_1.go
 │   ├── s_mul64To128.go
 │   ├── s_mul64To128M.go
 │   ├── s_mulAddF16.go
@@ -130,11 +131,15 @@
 │   ├── internals.go
 │   ├── opts.go
 │   ├── primitive_types.go
-│   ├── softfloat.go
 │   ├── softfloat_types.go
+│   ├── softfloat.go
 │   └── utils.go
+├── LICENSE
 ├── main.go
-├── softfloat-go
+├── README.md
+├── riscv
+│   ├── s_propagateNaNF16UI.go
+│   ├── s_propagateNaNF32UI.go
+│   ├── s_propagateNaNF64UI.go
+│   └── specialize.go
 └── tree.txt
-
-4 directories, 134 files

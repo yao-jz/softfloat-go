@@ -38,7 +38,8 @@ func F64_div(a Float64_t, b Float64_t) Float64_t {
 				// uiZ
 				return Float64_t(uiZ)
 			}
-			// invalid
+			// invalid: infinity / infinity
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			uiZ = 0x7FF8000000000000
 			// uiZ
 			return Float64_t(uiZ)
@@ -64,12 +65,15 @@ func F64_div(a Float64_t, b Float64_t) Float64_t {
 	if expB == 0 {
 		if sigB == 0 {
 			if uint64(expA)|sigA == 0 {
-				// invalid
+				// invalid: zero divided by zero
+				Softfloat_raiseFlags(Softfloat_flag_invalid)
 				uiZ = 0x7FF8000000000000
 				// uiZ
 				return Float64_t(uiZ)
 			}
-			// infinity
+			// divide by zero: a finite non-zero numerator over zero. Berkeley calls this
+			// flag "infinite"; RISC-V calls it DZ. Same bit, bit 3.
+			Softfloat_raiseFlags(Softfloat_flag_infinite)
 			uiZ = PackToF64UI(signZ, 0x7FF, 0)
 			// uiZ
 			return Float64_t(uiZ)
@@ -107,7 +111,13 @@ func F64_div(a Float64_t, b Float64_t) Float64_t {
 		q &= ^uint32(7)
 		sigZ &= ^uint64(0x7F)
 		doubleTerm = q << 1
-		rem = ((rem - uint64(doubleTerm)*uint64(sigB>>32)) << 28) - uint64(doubleTerm)*uint64(sigB>>4)
+		// uint32(sigB)>>4, not uint64(sigB>>4): the C is `((uint32_t) sigB >> 4)`, which
+		// truncates to the low 32 bits *before* shifting. Dropping the truncation lets the
+		// high half of sigB into the product, which corrupts the remainder and rounds the
+		// quotient the wrong way on about 2% of inputs - always by exactly one ULP, which is
+		// why it survived until a differential test compared against a correctly-rounded
+		// oracle. Line 102 above has the cast; this line had lost it.
+		rem = ((rem - uint64(doubleTerm)*uint64(sigB>>32)) << 28) - uint64(doubleTerm)*uint64(uint32(sigB)>>4)
 		if rem&0x8000000000000000 != 0 {
 			sigZ -= 1 << 7
 		} else {

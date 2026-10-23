@@ -25,7 +25,8 @@ func F64_sqrt(a Float64_t) Float64_t {
 		if !signA {
 			return a
 		}
-		// invalid
+		// invalid: square root of a negative number
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FF8000000000000
 		// uiZ
 		return Float64_t(uiZ)
@@ -35,7 +36,8 @@ func F64_sqrt(a Float64_t) Float64_t {
 		if uint64(expA)|sigA == 0 {
 			return a
 		}
-		// invalid
+		// invalid: square root of a negative number
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FF8000000000000
 		// uiZ
 		return Float64_t(uiZ)

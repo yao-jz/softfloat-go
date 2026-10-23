@@ -32,13 +32,15 @@ func Softfloat_subMagsF64(uiA uint64, uiB uint64, signZ bool) Float64_t {
 				// uiZ
 				return Float64_t(uiZ)
 			}
+			// invalid: infinity minus infinity
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			uiZ = 0x7FF8000000000000
 			// uiZ
 			return Float64_t(uiZ)
 		}
 		sigDiff = int64(sigA - sigB)
 		if sigDiff == 0 {
-			uiZ = PackToF64UI(false, 0, 0)
+			uiZ = PackToF64UI(Softfloat_roundingMode == Softfloat_round_min, 0, 0)
 			// uiZ
 			return Float64_t(uiZ)
 		}

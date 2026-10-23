@@ -10,6 +10,8 @@ func F32_lt(a, b Float32_t) bool {
 	var signA, signB bool
 
 	if IsNaNF32UI(uiA) || IsNaNF32UI(uiB) {
+		// Signaling comparison: any NaN operand is an invalid operation, quiet or not.
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		return false
 	}
 	signA = SignF32UI(uiA)

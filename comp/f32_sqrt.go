@@ -26,7 +26,8 @@ func F32_sqrt(a Float32_t) Float32_t {
 		if !signA {
 			return a
 		}
-		// invalid
+		// invalid: square root of a negative number
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FC00000
 		// uiZ
 		return Float32_t(uiZ)
@@ -36,7 +37,8 @@ func F32_sqrt(a Float32_t) Float32_t {
 		if uint32(expA)|sigA == 0 {
 			return a
 		}
-		// invalid
+		// invalid: square root of a negative number
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FC00000
 		// uiZ
 		return Float32_t(uiZ)

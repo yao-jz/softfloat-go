@@ -58,6 +58,9 @@ func Softfloat_mulAddF32(uiA uint32, uiB uint32, uiC uint32, op uint8) Float32_t
 				return Float32_t(uiZ)
 			}
 		}
+		// invalid: an infinite product with a zero factor, or an infinite product added
+		// to an infinity of the opposite sign
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FC00000
 		// propagateNaN_ZC
 		uiZ = Softfloat_propagateNaNF32UI(uiZ, uiC)
@@ -92,6 +95,9 @@ func Softfloat_mulAddF32(uiA uint32, uiB uint32, uiC uint32, op uint8) Float32_t
 				return Float32_t(uiZ)
 			}
 		}
+		// invalid: an infinite product with a zero factor, or an infinite product added
+		// to an infinity of the opposite sign
+		Softfloat_raiseFlags(Softfloat_flag_invalid)
 		uiZ = 0x7FC00000
 		// propagateNaN_ZC
 		uiZ = Softfloat_propagateNaNF32UI(uiZ, uiC)
@@ -119,7 +125,7 @@ func Softfloat_mulAddF32(uiA uint32, uiB uint32, uiC uint32, op uint8) Float32_t
 			// zeroProd
 			uiZ = uiC
 			if !IntToBool(int(uint32(expC)|sigC)) && (signProd != signC) {
-				uiZ = PackToF32UI(false, 0, 0)
+				uiZ = PackToF32UI(Softfloat_roundingMode == Softfloat_round_min, 0, 0)
 			}
 			// uiZ
 			return Float32_t(uiZ)
@@ -131,7 +137,7 @@ func Softfloat_mulAddF32(uiA uint32, uiB uint32, uiC uint32, op uint8) Float32_t
 			// zeroProd
 			uiZ = uiC
 			if !IntToBool(int(uint32(expC)|sigC)) && (signProd != signC) {
-				uiZ = PackToF32UI(false, 0, 0)
+				uiZ = PackToF32UI(Softfloat_roundingMode == Softfloat_round_min, 0, 0)
 			}
 			// uiZ
 			return Float32_t(uiZ)
@@ -190,7 +196,7 @@ func Softfloat_mulAddF32(uiA uint32, uiB uint32, uiC uint32, op uint8) Float32_t
 			sig64Z = sigProd - sig64C
 			if sig64Z == 0 {
 				// completeCancellation
-				uiZ = PackToF32UI(false, 0, 0)
+				uiZ = PackToF32UI(Softfloat_roundingMode == Softfloat_round_min, 0, 0)
 				// uiZ
 				return Float32_t(uiZ)
 			}

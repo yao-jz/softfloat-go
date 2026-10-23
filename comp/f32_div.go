@@ -37,7 +37,8 @@ func F32_div(a Float32_t, b Float32_t) Float32_t {
 				// uiZ
 				return Float32_t(uiZ)
 			}
-			// invalid
+			// invalid: infinity / infinity
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			uiZ = 0x7FC00000
 			// uiZ
 			return Float32_t(uiZ)
@@ -64,12 +65,15 @@ func F32_div(a Float32_t, b Float32_t) Float32_t {
 	if expB == 0 {
 		if sigB == 0 {
 			if uint32(expA)|sigA == 0 {
-				// invalid
+				// invalid: zero divided by zero
+				Softfloat_raiseFlags(Softfloat_flag_invalid)
 				uiZ = 0x7FC00000
 				// uiZ
 				return Float32_t(uiZ)
 			}
-			// infinity
+			// divide by zero: a finite non-zero numerator over zero. Berkeley calls this
+			// flag "infinite"; RISC-V calls it DZ. Same bit, bit 3.
+			Softfloat_raiseFlags(Softfloat_flag_infinite)
 			uiZ = PackToF32UI(signZ, 0xFF, 0)
 			// uiZ
 			return Float32_t(uiZ)

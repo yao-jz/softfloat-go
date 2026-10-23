@@ -13,6 +13,12 @@ func F64_to_ui64(a Float64_t, exact bool) uint64 {
 
 	var extSig [3]uint32
 
+	// The operand was never read: uiA was declared and then used, so every conversion
+	// decomposed the constant zero and the function returned 0 for every input. Nothing
+	// caught it because no conformance suite exercises FCVT.LU.D and the Go compiler treats
+	// a declared-and-used variable as used.
+	uiA = uint64(a)
+
 	sign = SignF64UI(uiA)
 	exp = ExpF64UI(uiA)
 	sig = FracF64UI(uiA)
@@ -24,7 +30,10 @@ func F64_to_ui64(a Float64_t, exact bool) uint64 {
 	extSig[IndexWord(3, 0)] = 0
 	if shiftDist <= 0 {
 		if shiftDist < -11 {
-			// invalid
+			// invalid: too large to represent at all. The saturated value alone is not
+			// enough - RISC-V distinguishes a genuine INT64_MAX from a clamped one by the
+			// flag, and rv64ud-p-fcvt_w test_20 checks exactly that.
+			Softfloat_raiseFlags(Softfloat_flag_invalid)
 			if exp == 0x7FF && FracF64UI(uiA) != 0 {
 				return 0xFFFFFFFFFFFFFFFF
 			} else {
